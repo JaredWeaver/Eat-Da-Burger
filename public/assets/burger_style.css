@@ -1,0 +1,27 @@
+
+body {
+    font-family: 'Big Shoulders Inline Text', cursive;
+    background-color: rgb(71, 13, 13);
+    color: white;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 22px;
+}
+
+.head {
+    font-family: 'Monoton', cursive;
+}
+
+.navbar {
+    background-color: darkgoldenrod;
+
+}
+
+.burgerimg {
+    height: 300px;
+    width: 300px;
+}
+
+.list-group-item {
+    background-color: darkgoldenrod;
+}

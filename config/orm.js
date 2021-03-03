@@ -1,39 +1,38 @@
 const connection = require('./connection.js')
 
 const orm = {
-    selectAll() {
-      const queryString = 'SELECT * FROM ?? WHERE ?? = ?';
+    selectAll: function (table, cbModel) {
+      const queryString = 'SELECT * FROM ??';
       connection.query(
         queryString,
-        [tableInput, colToSearch, valOfCol],
+        [table],
         (err, result) => {
           if (err) throw err;
-          console.log(result);
+          cbModel(result);
         }
       );
     },
-    insertOne() {
-      const queryString = 'SELECT ?? FROM ?? ORDER BY ?? DESC';
+    insertOne: function(cb) {
+      const queryString = 'INSERT INTO burgers (burger_name) VALUES (?)';
       console.log(queryString);
       connection.query(
         queryString,
-        [whatToSelect, table, orderCol],
+        [],
         (err, result) => {
           if (err) throw err;
-          console.log(result);
+          cb(result);
         }
       );
     },
-    updateOne() {
-      const queryString =
-        'SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1';
+    updateOne: function(cb) {
+      const queryString ='UPDATE burgers SET devoured = true WHERE ?';
   
       connection.query(
         queryString,
 
         (err, result) => {
           if (err) throw err;
-          console.log(result);
+          cb(result);
         }
       );
     },
