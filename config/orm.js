@@ -1,41 +1,39 @@
 const connection = require('./connection.js')
 
 const orm = {
-    selectAll: function (table, cbModel) {
+    selectAll(table, cb) {
       const queryString = 'SELECT * FROM ??';
       connection.query(
         queryString,
         [table],
         (err, result) => {
           if (err) throw err;
-          cbModel(result);
+          cb(result);
         }
       );
     },
-    insertOne: function(cb) {
-      const queryString = 'INSERT INTO burgers (burger_name) VALUES (?)';
-      console.log(queryString);
+    insertOne(table, burgerName, cb) {
+      const queryString = 'INSERT INTO ?? SET ?';
       connection.query(
         queryString,
-        [],
+        [table, burgerName],
         (err, result) => {
           if (err) throw err;
           cb(result);
         }
       );
     },
-    updateOne: function(cb) {
-      const queryString ='UPDATE burgers SET devoured = true WHERE ?';
-  
+    updateOne(table, devoured, col, val, cb) {
+      const queryString ='UPDATE ?? SET ? WHERE ?? = ?';
       connection.query(
         queryString,
-
+        [table, devoured, col, val, cb],
         (err, result) => {
           if (err) throw err;
           cb(result);
         }
       );
-    },
+    }
   };
   
   module.exports = orm;
