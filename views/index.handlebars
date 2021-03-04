@@ -39,12 +39,13 @@
         </div>
         <div class="col-sm-4 text-center">
             <h2>DEVOURED BURGERS</h2>
-            <ul>
+            <ul class="list-group burgersLeft">
                 {{#each burgers}}
                 {{#if devoured}}
 
-                <li>
-                </li>
+                <li class="list-group-item">
+                      {{burger_name}}
+                </lilist-group-item>
                 {{/if}}
                 {{/each}}
             </ul>

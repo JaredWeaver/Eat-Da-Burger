@@ -19,24 +19,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
             devoured: true
           }
   
-        //   fetch(`/api/burgers/${id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //       Accept: 'application/json',
-        //       'Content-Type': 'application/json',
-        //     },
+          fetch(`/api/burgers/${id}`, {
+            method: 'PUT',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
 
-        //     body: JSON.stringify(burgerDevoured),
+            body: JSON.stringify(burgerDevoured),
 
-        //   }).then((response) => {
-        //     console.log(response);
-        //     if (response.ok) {
-        //       console.log(`changed  to: ${id}`);
-        //       location.reload('/');
-        //     } else {
-        //       alert('something went wrong!');
-        //     }
-        //   });
+          }).then((response) => {
+            console.log(response);
+            if (response.ok) {
+              console.log(`changed  to: ${id}`);
+              location.reload('/');
+            } else {
+              alert('something went wrong!');
+            }
+          });
         });
       });
     }
