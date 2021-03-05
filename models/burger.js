@@ -7,8 +7,11 @@ const burger = {
         })
     },
     insertOne(burgerName, cb) {
+        console.log(burgerName);
         orm.insertOne('burgers', burgerName, (results) => {
               cb(results)
+
+                
         })
     },
     updateOne(devoured, val, cb) {

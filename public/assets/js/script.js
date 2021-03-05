@@ -3,14 +3,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.info("DOM loaded");
   }
 
-  // UPDATE
   const devourBtn = document.querySelectorAll(".devour");
 
-  // Set up the event listener for the create button
   if (devourBtn) {
     devourBtn.forEach((button) => {
       button.addEventListener("click", (e) => {
-        // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute("data-id");
         console.log(e);
         console.log(id);
@@ -40,35 +37,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  const createBurger = document.getElementById("newBurger");
+  // const createBurger = document.getElementById("create-form");
 
-  if (createBurger) {
-    createBurger.addEventListener("submit", (e) => {
-      e.preventDefault();
+  // if (createBurger) {
+  //   createBurger.addEventListener("submit", (e) => {
+  //     e.preventDefault();
 
-      const newBurger = {
-        burger_name: document.getElementById("newBurger").value.trim(),
-      };
+  //     const newBurger = {
+  //       burger_name: document.getElementById("newBurger").value.trim(),
+  //     };
 
-      console.log(newBurger)
+  //     console.log(newBurger);
 
-      fetch("/api/burgers", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+  //     fetch("/api/burgers", {
+  //       method: "POST",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //       },
 
-        body: JSON.stringify(newBurger),
-      }).then((response) => {
-        console.log(response);
+  //       body: JSON.stringify(newBurger),
+  //     }).then((response) => {
+  //       console.log(response);
 
-        
-        document.getElementById("newBurger").value = "";
+  //       document.getElementById("newBurger").value = "";
 
-        console.log("Created a new burger!");
-       response(location.reload());
-      });
-    });
-  }
+  //       console.log("Created a new burger!");
+  //       location.reload("/");
+  //     });
+  //   });
+  // }
 });

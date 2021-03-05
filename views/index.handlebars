@@ -29,16 +29,12 @@
             </div>
             <div class="col-sm-4 text-center">
                 <h2>ADD A BURGER</h2>
-                {{!-- <form id="create-form" action="/" method="POST">
-                    <div class="input-group mb-3 text-center">
-                        <input type="text" id="newBurger" name="burger_name">
-                    <button class="btn addBurger bg-success" type="submit" id="button-addon2">ADD BURGER</button>
-                    </div>
-                </form> --}}
                 <form id="create-form text-center" action="/api/burgers" method="POST">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="newBurger" placeholder="delicious burger name">
-                        <button class="btn addBurger bg-success" type="submit" value="submit" id="button-addon2">ADD BURGER</button>
+                        <input type="text" class="form-control" id="newBurger" placeholder="delicious burger name"
+                            name="burger_name">
+                        <button class="btn addBurger bg-success" type="submit" value="submit" id="button-addon2">ADD
+                            BURGER</button>
                     </div>
                 </form>
             </div>

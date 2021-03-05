@@ -18,6 +18,7 @@ const orm = {
         queryString,
         [table, burgerName],
         (err, result) => {
+          console.log(burgerName);
           if (err) throw err;
           cb(result);
         }
@@ -35,6 +36,9 @@ const orm = {
       );
     }
   };
+
+  
+
   
   module.exports = orm;
   
