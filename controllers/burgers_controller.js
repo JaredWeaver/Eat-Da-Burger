@@ -12,7 +12,9 @@ router.post('/api/burgers', (req, res) => {
         if (results.affectedRows === 0) {
             return res.status(404).end();
           }
-          res.redirect("/");
+
+          res.status(200).end();
+          // res.redirect("/");
     });
 });
 
