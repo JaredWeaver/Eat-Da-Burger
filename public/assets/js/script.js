@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         burger_name: document.getElementById("newBurger").value.trim(),
       };
 
-      console.log(newBurger);
-
       fetch("/api/burgers", {
         method: "POST",
         headers: {
@@ -55,8 +53,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         body: JSON.stringify(newBurger),
       }).then((response) => {
-        console.log(response);
-
         document.getElementById("newBurger").value = "";
 
         console.log("Created a new burger!");
